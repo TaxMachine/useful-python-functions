@@ -54,7 +54,7 @@ def agent():
 #from this repo
 import requests
 def agent():
-    r = requests.get("https://")
+    r = requests.get("https://raw.githubusercontent.com/TaxMachine/useful-python-functions/main/useragents.txt")
     e = r.split('\n')
     return ''.join(random.choice(e))
 ```
