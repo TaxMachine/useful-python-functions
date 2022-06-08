@@ -1,11 +1,11 @@
-# useful-python-functions
+# useful python functions
 useful python functions to make life easier
 
 ## Proxy rotator
 Very cool to use this when you make tons of requests and don't want to use your own IP Address to bypass rate limits, ip grabbing, etc
 You can get proxy lists on this website(there's planty of other websites like that but this is the one i use): https://proxyscrape.com/free-proxy-list
 
-**Function**
+### Function
 ```python
 import random
 def proxies(ptype):
@@ -23,7 +23,7 @@ def proxies(ptype):
                 d = ''.join(random.choice(f.read().split('\n')))
                 return {"http": f"socks5://{d}", "https": f"socks5://{d}"}
 ```
-**Uses**
+### Uses
 ```python
 import requests
 
@@ -44,7 +44,7 @@ while True:
 Could be useful if you want to randomize large amount of requests
 List of user agent is on the repo
 
-**Function**
+### Function
 ```python
 #local file
 import random
@@ -65,10 +65,43 @@ def agent():
         agt.append(t)
     return ''.join(random.choice(agt))
 ```
-**Uses**
+
+### Uses
 ```python
 import requests
 while True:
     r = requests.get("https://api.someurl.com", headers={"User-Agent": agent()})
     print(r.text)
 ```
+
+## Colors
+Make your console outputs cool and colorful
+
+### Functions
+```python
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+```
+
+### Uses
+```python
+print(f"{bcolors.OKGREEN}This is green")
+print(f"{bcolors.OKBLUE}This is blue")
+print(f"{bcolors.OKCYAN}This is cyan")
+print(f"{bcolors.WARNING}This is yellow")
+# and it goes on for the others...
+```
+
+# Crediting
+if you want to use my code feel free no need to credit me, just don't be a pussy and if someone asked you just say you found it on github
+
+# Donation
+ETH -> `0xF583244C94298605f1e6104ABEC573a3b14b9a17`
