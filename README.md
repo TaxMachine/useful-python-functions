@@ -37,3 +37,28 @@ while True:
   except Exception:
     pass
 ```
+
+## User-Agent rotator
+Could be useful if you want to randomize large amount of requests
+List of user agent is on the repo
+```python
+#local file
+def agent():
+    with open('./useragents.txt') as f:
+        e = f.read().split('\n')
+        d = random.choice(e)
+        return ''.join(d)
+#from this repo
+import requests
+def agent():
+    r = requests.get("https://")
+    e = r.split('\n')
+    return ''.join(random.choice(e))
+```
+**Uses**
+```python
+import requests
+while True:
+    r = requests.get("https://api.someurl.com", headers={"User-Agent": agent()})
+    print(r.text)
+```
