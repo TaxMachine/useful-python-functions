@@ -73,6 +73,7 @@ import requests
 while True:
     r = requests.get("https://api.someurl.com", headers={"User-Agent": agent()})
     print(r.text)
+    break
 ```
 
 ## Colors
