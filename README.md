@@ -100,6 +100,28 @@ print(f"{bcolors.WARNING}This is yellow")
 # and it goes on for the others...
 ```
 
+## Download File
+I don't think it needs explanations
+
+### Functions
+```python
+import requests
+def download(url, path):
+    try:
+        with requests.get(url, stream=True) as r:
+            r.raise_for_status()
+            with open(path, 'wb') as f:
+                for chunk in r.iter_content(chunk_size=8192): 
+                    f.write(chunk)
+    except Exception:
+        pass
+```
+
+### Uses
+```python
+download("https://avatars.githubusercontent.com/u/78520042?s=96&v=4", "./waifuwareontop.png")
+```
+
 # Crediting
 if you want to use my code feel free no need to credit me, just don't be a pussy and if someone asked you just say you found it on github
 
