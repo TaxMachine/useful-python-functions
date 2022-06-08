@@ -4,6 +4,7 @@ useful python functions to make life easier
 ## Proxy rotator
 Very cool to use this when you make tons of requests and don't want to use your own IP Address to bypass rate limits, ip grabbing, etc
 You can get proxy lists on this website(there's planty of other websites like that but this is the one i use): https://proxyscrape.com/free-proxy-list
+
 **Function**
 ```python
 def proxies(ptype):
@@ -41,6 +42,8 @@ while True:
 ## User-Agent rotator
 Could be useful if you want to randomize large amount of requests
 List of user agent is on the repo
+
+**Function**
 ```python
 #local file
 def agent():
