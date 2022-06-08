@@ -33,11 +33,12 @@ formdata = {
 }
 
 while True:
-  try:
-    r = requests.post('https://someurls.com', data=formdata, proxies=proxies("http"))
-    print(r.text)
-  except Exception:
-    pass
+    try:
+        r = requests.post('https://someurls.com', data=formdata, proxies=proxies("http"))
+        print(r.text)
+    except Exception:
+        pass
+    break
 ```
 
 ## User-Agent rotator
