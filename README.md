@@ -7,6 +7,7 @@ You can get proxy lists on this website(there's planty of other websites like th
 
 **Function**
 ```python
+import random
 def proxies(ptype):
     match ptype:
         case "socks4":
@@ -46,17 +47,23 @@ List of user agent is on the repo
 **Function**
 ```python
 #local file
+import random
 def agent():
     with open('./useragents.txt') as f:
         e = f.read().split('\n')
         d = random.choice(e)
         return ''.join(d)
+   
+   
 #from this repo
-import requests
+import random,requests
 def agent():
+    agt = []
     r = requests.get("https://raw.githubusercontent.com/TaxMachine/useful-python-functions/main/useragents.txt")
-    e = r.split('\n')
-    return ''.join(random.choice(e))
+    e = r.text.split('\n')
+    for t in e:
+        agt.append(t)
+    return ''.join(random.choice(agt))
 ```
 **Uses**
 ```python
